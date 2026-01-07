@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Files - File Knowledgebase</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📤 Upload Files</h1>
+            <p class="subtitle">Add files to your knowledgebase</p>
+            <div class="user-info">
+                <span id="userEmail"></span>
+                <button class="btn-logout" id="logoutBtn">Logout</button>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <section class="upload-section">
+                <div class="section-selector-container">
+                    <label for="sectionSelect" class="section-label">Select Knowledgebase Section:</label>
+                    <div class="section-selector-group">
+                        <select id="sectionSelect" class="section-select">
+                            <option value="">Loading sections...</option>
+                        </select>
+                        <button class="btn-add-section" id="addSectionBtn" title="Create new section">+ New Section</button>
+                    </div>
+                </div>
+
+                <div class="upload-container" id="uploadContainer">
+                    <input type="file" id="fileInput" multiple>
+                    <button class="upload-btn" id="uploadBtn">
+                        <span class="upload-icon-small">📤</span>
+                        <span>Choose Files to Upload</span>
+                    </button>
+                    <p class="upload-hint">You can also drag and drop files here</p>
+                    <div class="upload-progress" id="uploadProgress"></div>
+                </div>
+            </section>
+
+            <div class="back-link">
+                <a href="index.html" class="back-btn">← Back to Knowledgebase</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Section Modal -->
+    <div class="modal" id="addSectionModal">
+        <div class="modal-content modal-small">
+            <span class="close" id="closeSectionModal">&times;</span>
+            <h3>Create New Section</h3>
+            <div class="modal-body">
+                <input type="text" id="newSectionName" placeholder="Enter section name (e.g., Management, Technical)" class="section-input">
+                <div class="modal-actions">
+                    <button class="btn btn-cancel" id="cancelSectionBtn">Cancel</button>
+                    <button class="btn btn-primary" id="createSectionBtn">Create</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="upload.js"></script>
+</body>
+</html>

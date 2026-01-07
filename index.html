@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Knowledgebase</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 File Knowledgebase</h1>
+            <p class="subtitle">Upload, organize, and download your files</p>
+            <div class="user-info">
+                <span id="userEmail"></span>
+                <button class="btn-logout" id="logoutBtn">Logout</button>
+            </div>
+        </header>
+
+        <!-- Search and Filter Section - At the top -->
+        <div class="search-container">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search files by name, type, or date...">
+                <select id="filterType">
+                    <option value="all">All Types</option>
+                    <option value="image">Images</option>
+                    <option value="document">Documents</option>
+                    <option value="video">Videos</option>
+                    <option value="audio">Audio</option>
+                    <option value="other">Other</option>
+                </select>
+                <button class="clear-btn" id="clearBtn">Clear</button>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <!-- Section Management -->
+            <div class="sections-header">
+                <div class="sections-controls">
+                    <select id="sectionFilter" class="section-filter">
+                        <option value="all">All Sections</option>
+                    </select>
+                    <button class="btn-add-section" id="addSectionBtn">+ New Section</button>
+                </div>
+            </div>
+
+            <!-- Browse Content -->
+            <section class="knowledgebase-section">
+                <div class="section-header">
+                    <h2>Knowledgebase</h2>
+                    <span class="file-count" id="fileCount">0 files</span>
+                </div>
+                <div class="files-grid" id="filesGrid">
+                    <div class="empty-state" id="emptyState">
+                        <div class="empty-icon">📁</div>
+                        <p>No files uploaded yet</p>
+                        <p class="empty-hint">Go to <a href="upload.html" style="color: #667eea;">Upload</a> to add your first file!</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="upload-link-container">
+                <a href="upload.html" class="upload-link-btn">
+                    <span class="upload-icon-small">📤</span>
+                    <span>Upload Files</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- File Preview Modal -->
+    <div class="modal" id="previewModal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Add Section Modal -->
+    <div class="modal" id="addSectionModal">
+        <div class="modal-content modal-small">
+            <span class="close" id="closeSectionModal">&times;</span>
+            <h3>Create New Section</h3>
+            <div class="modal-body">
+                <input type="text" id="newSectionName" placeholder="Enter section name (e.g., Management, Technical)" class="section-input">
+                <div class="modal-actions">
+                    <button class="btn btn-cancel" id="cancelSectionBtn">Cancel</button>
+                    <button class="btn btn-primary" id="createSectionBtn">Create</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
